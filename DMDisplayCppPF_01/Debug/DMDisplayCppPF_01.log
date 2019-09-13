@@ -1,0 +1,63 @@
+﻿  DMDisplayCppPF_01.cpp
+  GameControl.cpp
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(1,10): warning C4067:  unexpected tokens following preprocessor directive - expected a newline
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(17,53): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(17,32): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(49,13): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(50,14): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(97,20): warning C4244:  '=': conversion from 'float' to 'SHORT', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(98,20): warning C4244:  '=': conversion from 'float' to 'SHORT', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(112,66): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(112,52): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(112,84): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(135,54): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(137,63): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(137,50): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(137,79): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(139,62): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(139,49): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(139,78): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(141,63): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(141,50): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(141,79): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(144,66): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(144,53): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(144,82): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(147,64): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(147,51): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(147,80): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(153,13): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(154,14): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(174,54): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(176,67): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(176,54): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(176,83): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(178,69): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(178,56): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(178,85): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(180,66): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(180,53): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(180,82): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(190,13): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(191,14): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(221,55): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(221,41): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(222,55): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(222,41): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(223,55): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(223,41): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(224,55): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(224,41): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(225,55): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(225,41): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(226,55): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(226,41): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(227,55): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(227,41): warning C4244:  'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(336,13): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(337,14): warning C4244:  'initializing': conversion from 'float' to 'int', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(365,6): warning C4244:  '=': conversion from 'int' to 'float', possible loss of data
+  Generating Code...
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(366,6): warning C4244:  '=': conversion from 'int' to 'float', possible loss of data
+C:\Users\Jack\source\repos\DMDisplayCppPF_01\DMDisplayCppPF_01\GameControl.cpp(39): warning C4715:  'GameControl::Click': not all control paths return a value
+  DMDisplayCppPF_01.vcxproj -> C:\Users\Jack\source\repos\DMDisplayCppPF_01\Debug\DMDisplayCppPF_01.exe

@@ -1,0 +1,2 @@
+ct <string name>: Change turn to selected character
+le <int x>: load encounter #x
