@@ -23,5 +23,6 @@ public:
 	int IntConvert(string s);
 
 	Archetype(string full);
+	NPC* Generate(string _name);
 };
 

@@ -36,7 +36,7 @@ Archetype::Archetype(string full) {
 	++it;
 	hpz = IntConvert(*it);
 	++it;
-	int numWeps = 0;
+	numWeps = 0;
 	while (it != subs.end()) {
 		weapName.push_back(*it);
 		++it;
@@ -46,6 +46,32 @@ Archetype::Archetype(string full) {
 		++it;
 		wz.push_back(IntConvert(*it));
 		++it;
+		wTH.push_back(IntConvert(*it));
+		++it;
 		numWeps++;
 	}
+}
+
+NPC* Archetype::Generate(string _name) {
+	int hp = hpz;
+	for (int i = 0; i < hpx; i++) {
+		hp += rand() % hpy + 1;
+	}
+	int ind = rand() % numWeps;
+	list<string>::iterator itWep;
+	list<int>::iterator itwx, itwy, itwz, itwTH;
+	itWep = weapName.begin();
+	itwx = wx.begin();
+	itwy = wy.begin();
+	itwz = wz.begin();
+	itwTH = wTH.begin();
+	for (int i = 0; i < ind; i++) {
+		++itWep;
+		++itwx;
+		++itwy;
+		++itwz;
+		++itwTH;
+	}
+
+	return new NPC(_name, hp, hpx * hpy / 2 + hpz, 10, *itWep, *itwTH, *itwx, *itwy, *itwz, "" + type[0]);
 }
