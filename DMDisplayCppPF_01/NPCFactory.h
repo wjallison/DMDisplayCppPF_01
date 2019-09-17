@@ -2,13 +2,8 @@
 #include "Character.h"
 #include <string>
 #include <list>
+#include <iterator>
 #include <sstream>
-
-
-class NPCFactory
-{
-
-};
 
 class Archetype {
 private:
@@ -25,4 +20,15 @@ public:
 	Archetype(string full);
 	NPC* Generate(string _name);
 };
+
+class NPCFactory
+{
+	list<Archetype> types = list<Archetype>();
+
+	NPC* Create(string _type, string _name);
+
+	void Add(string full);
+};
+
+
 

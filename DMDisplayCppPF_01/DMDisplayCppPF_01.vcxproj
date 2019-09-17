@@ -153,12 +153,14 @@
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
     <ClCompile Include="DMDisplayCppPF_01.cpp" />
+    <ClCompile Include="FileWatcher.cpp" />
     <ClCompile Include="GameControl.cpp" />
     <ClCompile Include="NPCFactory.cpp" />
     <ClCompile Include="RollManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
+    <ClInclude Include="FileWatcher.h" />
     <ClInclude Include="GameControl.h" />
     <ClInclude Include="NPCFactory.h" />
     <ClInclude Include="RollManager.h" />

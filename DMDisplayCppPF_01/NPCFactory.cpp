@@ -3,13 +3,6 @@
 
 
 
-int Archetype::IntConvert(string s) {
-	stringstream strstr(s);
-	int res = 0;
-	strstr >> res;
-	return res;
-}
-
 Archetype::Archetype(string full) {
 	list<string> subs;
 	
@@ -74,4 +67,26 @@ NPC* Archetype::Generate(string _name) {
 	}
 
 	return new NPC(_name, hp, hpx * hpy / 2 + hpz, 10, *itWep, *itwTH, *itwx, *itwy, *itwz, "" + type[0]);
+}
+
+NPC* NPCFactory::Create(string _type, string _name) {
+	list<Archetype>::iterator it;
+	//it = types.begin();
+	for (it = types.begin(); it != types.end(); ++it) {
+		if (it->type == _type) {
+			return it->Generate(_name);
+		}
+	}
+	return new NPC();
+}
+
+void NPCFactory::Add(string full) {
+	types.push_back(Archetype(full));
+}
+
+int Archetype::IntConvert(string s) {
+	stringstream strstr(s);
+	int res = 0;
+	strstr >> res;
+	return res;
 }

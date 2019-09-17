@@ -33,6 +33,11 @@ void UpdateFromPC(PC pc, PCDisplay display) {
 
 int main()
 {
+	//CreateProcess()
+	//AllocConsole();
+	//system("start \"Help\" cmd /C \"echo off & echo Help text 1 & echo Help text 2 & echo Help text 3 & pause\"");
+
+
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
 	int columns, rows;
 
