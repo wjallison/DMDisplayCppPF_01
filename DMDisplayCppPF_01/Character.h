@@ -1,5 +1,8 @@
 #pragma once
 #include <string>
+#include <list>
+#include <iterator>
+#include <sstream>
 
 using namespace std;
 class Character
@@ -19,6 +22,9 @@ public:
 	string boardID;
 
 	virtual void TakeHit(int dam);
+
+	int strToInt(string s);
+
 };
 
 class PC : public Character {
@@ -26,8 +32,11 @@ private:
 public:
 	PC();
 	PC(string _name);
+	PC(bool fromSave, string constructor);
 	PC(string _name, int _maxHP, int _ac, int _toHitBonus, int _attackDiceNum, int _attackDiceType, int _attackBonus, string _boardID);
+	PC(string _name, int _hp, int _maxHP, int _ac, int _toHitBonus, int _attackDiceNum, int _attackDiceType, int _attackBonus, string _boardID);
 	//string weapon;
+	string SaveString();
 };
 
 class NPC : public Character {
@@ -43,6 +52,8 @@ public:
 
 	void TakeHit(int dam) override;
 	void EvaluateHealthDescriptor();
+
+	string SaveString();
 	//void EvaluateStrength
 };
 

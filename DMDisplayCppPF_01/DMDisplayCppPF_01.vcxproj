@@ -152,6 +152,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="CommandHandler.cpp" />
     <ClCompile Include="DMDisplayCppPF_01.cpp" />
     <ClCompile Include="FileWatcher.cpp" />
     <ClCompile Include="GameControl.cpp" />
@@ -160,6 +161,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Character.h" />
+    <ClInclude Include="CommandHandler.h" />
     <ClInclude Include="FileWatcher.h" />
     <ClInclude Include="GameControl.h" />
     <ClInclude Include="NPCFactory.h" />

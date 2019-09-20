@@ -8,7 +8,7 @@ Archetype::Archetype(string full) {
 	
 	
 	string sub = "";
-	for (int i = 0; i < subs.size(); i++) {
+	for (int i = 0; i < full.size(); i++) {
 		if (full[i] == ';') {
 			subs.push_back(sub);
 			sub = "";
@@ -89,4 +89,8 @@ int Archetype::IntConvert(string s) {
 	int res = 0;
 	strstr >> res;
 	return res;
+}
+
+NPCFactory::NPCFactory() {
+
 }

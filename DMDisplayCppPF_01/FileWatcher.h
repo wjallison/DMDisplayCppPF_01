@@ -45,6 +45,24 @@ public:
 					++it;
 				}
 			}
+
+			for (auto& file : std::experimental::filesystem::recursive_directory_iterator(pathToWatch)) {
+				auto currentFileLastWriteTime = std::experimental::filesystem::last_write_time(file);
+
+				//File Created
+				if (!Contains(file.path().string())) {
+					paths_[file.path().string()] = currentFileLastWriteTime;
+					action(file.path().string(), FileStatus::created);
+				}
+
+				//File Modified
+				else {
+					if (paths_[file.path().string()] != currentFileLastWriteTime) {
+						paths_[file.path().string()] = currentFileLastWriteTime;
+						action(file.path().string(), FileStatus::modified);
+					}
+				}
+			}
 		}
 	}
 };

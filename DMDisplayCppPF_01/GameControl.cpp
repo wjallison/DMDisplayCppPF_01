@@ -65,6 +65,7 @@ void GameControl::Update() {
 void GameControl::AddChild(GameControl* gc) {
 	//children.push_back(gc);
 	children.push_back(gc);
+	++childCounter;
 
 }
 
@@ -78,6 +79,38 @@ void GameControl::DrawChar(int x, int y, char c, int style) {
 	std::cout << c << endl;
 	//std::cout << 'k';
 }
+
+//template<typename T>
+//void GameControl::UpdateNamed(string nm) {
+//	if (name == nm) {
+//
+//	}
+//	else {
+//		for (auto it = children.begin(); it != children.end(); ++it) {
+//			(*it)->UpdateNamed(nm, obj);
+//		}
+//	}
+//}
+
+GameControl* GameControl::PullNamed(string nm) {
+	if (name == nm) {
+		return this;
+	}
+	else {
+		for (auto it = children.begin(); it != children.end(); ++it) {
+			GameControl* ret = (*it)->PullNamed(nm);
+			if (ret->name == nm) {
+				return ret;
+			}
+		}
+	}
+
+	return new GameControl();
+}
+
+
+
+
 
 TextControl::TextControl(Vector2 corner, Vector2 sz, int back, string txt) :GameControl(corner, sz, back) {
 	text = txt;
@@ -122,30 +155,50 @@ void FilledBar::AdjustVal(int dVal, int dTot) {
 	total += dTot;
 
 	list<GameControl*>::iterator iter = children.begin();
+	//value += dVal;
+	//total += dTot;
+	int mp = (value / total * size.x);
+	(*iter)->size = Vector2(mp, 1);
 	++iter;
+	(*iter)->ULCorner = Vector2(ULCorner.x + mp, ULCorner.y);
+	(*iter)->size = Vector2(size.x - mp, 1);
+	//*iter->
 	/*iter->ULCorner.x 
 	iter->ULCorner.x = ULCorner.x + size.x * value / total;
 	iter->size.x = ULCorner.x + size.x - ULCorner.x + size.x * value / total;*/
 }
 
+void FilledBar::SetVal(int val, int tot) {
+	value = val;
+	total = tot;
+	list<GameControl*>::iterator iter = children.begin();
+	//value += dVal;
+	//total += dTot;
+	int mp = (size.x * value / total);
+	(*iter)->size = Vector2(mp, 1);
+	++iter;
+	(*iter)->ULCorner = Vector2(ULCorner.x + mp, ULCorner.y);
+	(*iter)->size = Vector2(size.x - mp, 1);
+}
 
 
-PCDisplay::PCDisplay(Vector2 corner, Vector2 sz, int back, PC _pc) :GameControl(corner, sz, back) {
+
+PCDisplay::PCDisplay(Vector2 corner, Vector2 sz, int back, PC* _pc) :GameControl(corner, sz, back) {
 	pc = _pc;
-	TextControl* nm = new TextControl(corner, Vector2(sz.x, 1), 7, &pc.name);
+	TextControl* nm = new TextControl(corner, Vector2(sz.x, 1), 7, &pc->name);
 	AddChild(nm);
-	TextControl* hp = new TextControl(Vector2(corner.x, corner.y + 1), Vector2(sz.x, 1), 10, "HP: " + to_string(pc.hp) + " (" + to_string(pc.maxHP) + ")");
+	TextControl* hp = new TextControl(Vector2(corner.x, corner.y + 1), Vector2(sz.x, 1), 10, "HP: " + to_string(pc->hp) + " (" + to_string(pc->maxHP) + ")");
 	AddChild(hp);
 	FilledBar* hpbar = new FilledBar(Vector2(corner.x, corner.y + 2), Vector2(sz.x, 1), back, 235, 196);
 	AddChild(hpbar);
 	TextControl* ac = new TextControl(Vector2(corner.x, corner.y + 3), Vector2(sz.x, 1), 7,
-		"AC: " + to_string(pc.ac));
+		"AC: " + to_string(pc->ac));
 	AddChild(ac);
 	TextControl* toHit = new TextControl(Vector2(corner.x, corner.y + 4), Vector2(sz.x, 1), 7,
-		"To Hit Bonus: " + to_string(pc.toHitBonus));
+		"To Hit Bonus: " + to_string(pc->toHitBonus));
 	AddChild(toHit);
 	TextControl* dam = new TextControl(Vector2(corner.x, corner.y + 5), Vector2(sz.x, 1), 7,
-		"Damage: " + to_string(pc.attackDiceNum) + "d" + to_string(pc.attackDiceType) + " + " + to_string(pc.attackBonus));
+		"Damage: " + to_string(pc->attackDiceNum) + "d" + to_string(pc->attackDiceType) + " + " + to_string(pc->attackBonus));
 	AddChild(dam);
 }
 
@@ -161,28 +214,28 @@ void PCDisplay::Draw() {
 	}
 }
 
-void PCDisplay::Update(PC _pc) {
+void PCDisplay::Update(PC* _pc) {
 	pc = _pc;
 	list<GameControl*>::iterator it;
 	it = children.begin();
 	GameControl* pt = *it;
 	TextControl* tx = dynamic_cast<TextControl*>(pt);
-	tx->text = pc.name;
+	tx->text = pc->name;
 	++it;
 	tx = dynamic_cast<TextControl*>(*it);
-	tx->text = "HP: " + to_string(pc.hp) + " (" + to_string(pc.maxHP) + ")";
+	tx->text = "HP: " + to_string(pc->hp) + " (" + to_string(pc->maxHP) + ")";
 	++it;
 	FilledBar* fb = dynamic_cast<FilledBar*>(*it);
-	fb->AdjustVal(pc.hp);
+	fb->SetVal(pc->hp,pc->maxHP);
 	++it;
 	tx = dynamic_cast<TextControl*>(*it);
-	tx->text = "AC: " + to_string(pc.ac);
+	tx->text = "AC: " + to_string(pc->ac);
 	++it;
 	tx = dynamic_cast<TextControl*>(*it);
-	tx->text = "To Hit Bonus: " + to_string(pc.toHitBonus);
+	tx->text = "To Hit Bonus: " + to_string(pc->toHitBonus);
 	++it;
 	tx = dynamic_cast<TextControl*>(*it);
-	tx->text = "Damage: " + to_string(pc.attackDiceNum) + "d" + to_string(pc.attackDiceType) + " + " + to_string(pc.attackBonus);
+	tx->text = "Damage: " + to_string(pc->attackDiceNum) + "d" + to_string(pc->attackDiceType) + " + " + to_string(pc->attackBonus);
 }
 
 NPCDisplay::NPCDisplay(Vector2 corner, Vector2 sz, int back, NPC* _npc) : GameControl(corner, sz, back) {
@@ -193,8 +246,38 @@ NPCDisplay::NPCDisplay(Vector2 corner, Vector2 sz, int back, NPC* _npc) : GameCo
 	AddChild(health);
 	TextControl* strength = new TextControl(Vector2(corner.x, corner.y + 2), Vector2(sz.x, 1), 4, npc->strengthCurveDesc);
 	AddChild(strength);
-	TextControl* armed = new TextControl(Vector2(corner.x, corner.y + 3), Vector2(sz.x, 1), 7, "Armed with" + npc->armedWith);
+	TextControl* armed = new TextControl(Vector2(corner.x, corner.y + 3), Vector2(sz.x, 1), 7, "Armed with: " + npc->armedWith);
 	AddChild(armed);
+}
+
+void NPCDisplay::Update(NPC* _npc) {
+	npc = _npc;
+	list<GameControl*>::iterator it;
+	it = children.begin();
+	TextControl* nm = dynamic_cast<TextControl*>((*it));
+	nm->text = npc->name;
+	++it;
+	TextControl* health = dynamic_cast<TextControl*>((*it));
+	health->text = npc->healthCurveDesc;
+	++it;
+	TextControl* str = dynamic_cast<TextControl*>((*it));
+	str->text = npc->strengthCurveDesc;
+	++it;
+	TextControl* arm = dynamic_cast<TextControl*>((*it));
+	arm->text = "Armed with: " + npc->armedWith;
+}
+
+void NPCDisplay::Draw() {
+	if (show) {
+		GameControl::Draw();
+	}
+	else {
+		return;
+	}
+}
+
+void NPCDisplay::Show(bool _show) {
+	show = _show;
 }
 
 
@@ -202,23 +285,43 @@ BorderBox::BorderBox(Vector2 corner, Vector2 sz, int back, char bkfl) : GameCont
 	bkchr = bkfl;
 }
 
+BorderBox::BorderBox(Vector2 corner, Vector2 sz, int back, char bkfl, int back2, char bkfl2) : GameControl(corner, sz, back) {
+	bkchr = bkfl2;
+	background2 = back2;
+}
+
+void BorderBox::OnOff(bool on) {
+	switchBack = on;
+}
+
+void BorderBox::Flip() {
+	switchBack = !switchBack;
+}
+
 void BorderBox::Draw() {
+	char c = bkchr;
+	int bck = background;
+	if (switchBack) {
+		c = bkchr2;
+		bck = background2;
+	}
+
 	for (int i = ULCorner.x; i < ULCorner.x + size.x; i++) {
 		for (int j = ULCorner.y; j < ULCorner.y + size.y; j++) {
 			if (i == ULCorner.x) {
-				DrawChar(i, j, bkchr, background);
+				DrawChar(i, j, c, bck);
 			}
 			else if (i == ULCorner.x + size.x - 1) {
-				DrawChar(i, j, bkchr, background);
+				DrawChar(i, j, c, bck);
 			}
 			else if (j == ULCorner.y) {
-				DrawChar(i, j, bkchr, background);
+				DrawChar(i, j, c, bck);
 			}
 			else if (j == ULCorner.y + size.y - 1) {
-				DrawChar(i, j, bkchr, background);
+				DrawChar(i, j, c, bck);
 			}
 			else {
-				DrawChar(i, j, ' ', background);
+				DrawChar(i, j, ' ', bck);
 			}
 		}
 	}

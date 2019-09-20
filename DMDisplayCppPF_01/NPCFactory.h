@@ -23,11 +23,14 @@ public:
 
 class NPCFactory
 {
+public:
 	list<Archetype> types = list<Archetype>();
 
 	NPC* Create(string _type, string _name);
 
 	void Add(string full);
+
+	NPCFactory();
 };
 
 

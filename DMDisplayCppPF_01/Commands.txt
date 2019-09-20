@@ -1,2 +1,18 @@
-ct <string name>: Change turn to selected character
-le <int x>: load encounter #x
+turn pc 1
+turn [pc/npc] [1-index]
+
+roll hit a
+roll [hit/dam] [''/a/d]
+
+roll 1 4 2
+roll [x] [y] [z]
+
+hit pc 1 3
+hit [pc/npc] [1-index] [damage]
+
+hide
+
+show all
+show [all/1-index]
+
+

@@ -30,6 +30,8 @@ public:
 	Vector2 LRCorner;
 	int background; //consoleTextAttribute https://stackoverflow.com/questions/4053837/colorizing-text-in-the-console-with-c
 	char backFill;
+	string name = "";
+	int childCounter = 0;
 
 	GameControl();
 	GameControl(Vector2 corner, Vector2 sz, int back);
@@ -45,6 +47,11 @@ public:
 	void AddChild(GameControl* gc);
 
 	void DrawChar(int x, int y, char c, int style);
+
+	//template<typename T>
+	//void UpdateNamed(string nm);
+
+	GameControl* PullNamed(string nm);
 };
 
 class TextControl : public GameControl 
@@ -74,30 +81,45 @@ public:
 	//FilledBar(Vector2 corner, Vector2 sz, int back) : GameControl(corner, sz, back);
 	FilledBar(Vector2 corner, Vector2 sz, int back, int back1, int back2);
 	void AdjustVal(int dVal, int dTot = 0);
+
+	void SetVal(int val, int tot);
 };
 
 class PCDisplay : public GameControl {
 private:
 public:
-	PC pc;
-	PCDisplay(Vector2 corner, Vector2 sz, int back, PC _pc);
+	PC* pc;
+	PCDisplay(Vector2 corner, Vector2 sz, int back, PC* _pc);
 	void Draw() override;
-	void Update(PC _pc);
+	void Update(PC* _pc);
 };
 
 class NPCDisplay : public GameControl {
 private:
 public:
+	bool show = false;
 	NPC* npc;
 	NPCDisplay(Vector2 corner, Vector2 sz, int back, NPC* _npc);
+	void Update(NPC* _npc);
 
+	void Draw() override;
+
+	void Show(bool _show);
 };
 
 class BorderBox : public GameControl {
 private:
 public:
 	char bkchr;
+	bool switchBack = false;
+	int background2;
+	char bkchr2;
 	BorderBox(Vector2 corner, Vector2 sz, int back, char bkfl);
+	BorderBox(Vector2 corner, Vector2 sz, int back, char bkfl, int back2, char bkfl2);
+
+	void OnOff(bool on);
+
+	void Flip();
 
 	void Draw() override;
 };
