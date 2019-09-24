@@ -154,5 +154,5 @@ string NPC::SaveString() {
 	ret += to_string(hp) + "/" + to_string(maxHP) + '\n';
 	ret += "AC: " + to_string(ac) + '\n';
 	ret += "To Hit Bonus:" + to_string(toHitBonus) + '\n';
-	ret += armedWith + ": " + to_string(attackDiceNum) + "d" + to_string(attackDiceType) + " + " + to_string(attackBonus) + '\n';
+	ret += armedWith + ": " + to_string(attackDiceNum) + "d" + to_string(attackDiceType) + " + " + to_string(attackBonus) + '\n'+'\n';
 }

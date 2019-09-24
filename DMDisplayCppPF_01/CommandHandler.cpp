@@ -344,7 +344,12 @@ void CommandHandler::ReceiveCommand(string cmd) {
 	else if (*it2 == "clear") {
 		ClearNPCs();
 	}
-	
+	else if (*it2 == "load") {
+	LoadChars();
+}
+
+	SaveChars();
+	ExportNPCs();
 }
 
 
@@ -439,5 +444,15 @@ void CommandHandler::LoadChars() {
 }
 
 void CommandHandler::ExportNPCs() {
+	ofstream npcFile;
+	npcFile.open("NPCListing.txt");
 
+	for (list<GameControl*>::iterator gameIt = game->children.begin(); gameIt != game->children.end(); ++gameIt) {
+		if ((*gameIt)->name == "npcBox") {
+			for (list<GameControl*>::iterator npcIt = (*gameIt)->children.begin(); npcIt != (*gameIt)->children.end(); ++npcIt) {
+				NPCDisplay* npcd = dynamic_cast<NPCDisplay*>(*npcIt);
+				npcFile << npcd->npc->SaveString();
+			}
+		}
+	}
 }

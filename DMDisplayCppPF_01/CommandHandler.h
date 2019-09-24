@@ -36,8 +36,6 @@ public:
 
 	void SaveChars();
 
-	//void SaveString
-
 	void LoadChars();
 
 	void ExportNPCs();
